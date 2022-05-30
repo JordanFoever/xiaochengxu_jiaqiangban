@@ -1,0 +1,7 @@
+<view wx:for="{{findList}}" class="content" data-aid="{{item.id}}" bindtap="toFindDetail">
+    <image mode="aspectFill" src="{{item.timage}}"></image>
+    <view class="wei_content">
+        <view class="wei_top">{{item.title}}</view>
+        <view class="wei_buttom">{{item.author}}</view>
+    </view>
+</view>

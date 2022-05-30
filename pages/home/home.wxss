@@ -1,0 +1,296 @@
+
+/* 顶部导航 */
+page{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6f8;
+    color: inherit;
+    font-size: 30rpx;
+    line-height: 1.5;
+    font-family: Chinese Quote,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+    box-sizing:border-box;
+    position: relative;
+}
+.nav
+{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5.8666667vw;
+    margin-bottom: 3.2vw;
+    background-color: #ffffff;  
+}
+
+.city-c{
+    display: flex;
+    align-items: center;
+}
+.current-city{
+    display: flex;
+    align-items: center;
+    height: 9.6vw;
+    padding: 0 3.2vw;
+    position: relative;
+}
+
+.i-logo{
+    width: 5.6vw;
+    height: 5.6vw;
+    margin-right: .8vw;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url(//gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg);
+}
+/* 左边 */
+.nav_right{
+    height: 10.4vw;
+    display: flex;
+    /* flex-wrap: nowrap;
+    justify-content: flex-start; */
+    align-items: center;
+    position: relative;
+    overflow-x: scroll;
+}
+.nav_right view{
+    box-sizing: border-box;
+    padding-bottom: 10rpx;
+}
+.nav_right view:nth-child(2){
+    margin-left: 30rpx;
+}
+/* .bui-tabs-tab-line{
+    position: absolute;
+    bottom: 0;
+    height: .5333333vw;
+    border-radius: 1px;
+} */
+.select
+{
+    border-bottom: 4rpx solid #fb4e64;
+	color: #fb4e64;
+}
+/* 开始热映部分 */
+.now_play,.futrue_play{
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+/* 轮播图部分 */
+.swiper_top{
+    height: 150rpx;
+    margin-bottom: 3.2vw;
+}
+
+swiper-item image{
+    width: 100%;
+    height: 100%;
+}
+
+swiper-item{
+    border-radius: 15rpx;
+}
+/* <!-- 第二部分,列表(电影礼包，拼团领卷，巨星驾到，影城特惠) --> */
+.list_select{
+    width: 100%;
+    padding-bottom: 20rpx;
+    padding-top: 20rpx;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15rpx;
+    margin-bottom: 3.2vw;
+}
+.list_select>view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list_select>view>text{
+    margin-top: 10rpx;
+    font-size: 23rpx;
+}
+.list_select>view>image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+}
+ /* 第三部分 列表部分 */
+ /* .list_main{
+
+ } */
+.list_main_content{
+    /* width: 100%; */
+    /* 样式 */
+    padding: 24rpx;
+    background-color: #ffffff;
+    /* 布局 */
+    display: flex;
+    align-items: center;
+    border-radius: 15rpx;
+    margin-bottom: 18rpx;
+}
+/* 左边图片 */
+.list_main .list_main_content_image{
+    flex: 0 0 auto;
+    width: 20.2666667vw;
+    height: 28vw;
+    border-radius: var(--bui-shape-radius-default);
+    padding: .8vw;
+    position: relative;
+    overflow: hidden;
+}
+.bui_play{
+    width: 6.4vw;
+    height: 6.4vw;
+    border-radius: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1.6vw;
+    right: 1.6vw;
+}
+.list_main .bui_image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 中间内容 */
+.list_main_content_content{
+    align-self: flex-start;
+    padding:0 24rpx;
+    flex: 1 1 auto;
+    overflow: hidden;
+    width: 30%;
+ 
+}
+.list_main .movie-name-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.8666667vw;
+    max-width: 100%;
+}
+.list_main .movie-name-wrapper .movie-name{
+    font-size: 32rpx;
+    line-height: 1.2;
+    font-weight: 500;
+    width: auto;
+    overflow: hidden;
+    /* 这个可以让超出的地方变成点，配合上面和下面下面 */
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+/* 评分部分 */
+.xiaowei-movie-desc{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.8666667vw;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+.xiaowei-movie-desc .xiaowei-movie-desc-normal{
+    color: rgb(46, 51, 62);
+    font-size: 24rpx;
+    font-weight: 400;
+    line-height: 36rpx;
+}
+.xiaowei-movie-desc .xiaowei-movie-desc-highlight{
+    white-space: nowrap;
+    color: rgb(255, 144, 28);
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 4rpx;
+}
+
+.xiaowei-movie-desc .xiaowei-movie-desc-splitline{
+    color: #e9ebef;
+    font-size: 12px;
+    background: none;
+    margin: 0 1.6vw;
+    width: 1px;
+    height: 3.2vw;
+}
+.xiaowei-movie-desc .xiaowei-movie-desc-normal{
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24rpx;
+}
+
+.list_main_content_content .xiaowei-public{
+    font-weight: 400;
+    line-height: 1.2;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(95, 102, 114);
+    font-size: 24rpx;
+    box-sizing: border-box;
+    margin-bottom: 14rpx;
+} 
+.list_main_content_content .xaiowei-movie-tags{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    height: 4vw;
+    line-height: 4vw;
+    padding: 0 var(--bui-spacing-xsmall);
+    font-size: var(--bui-font-size-label);
+    font-weight: 400;
+    border-radius: var(--bui-shape-radius-label);
+    box-sizing: border-box;
+}
+.list_main_content_content .xaiowei-movie-tags .today_hot{
+    color: rgb(255, 67, 97); 
+    border: 2rpx solid rgba(255, 67, 97, 0.4);
+    box-sizing :border-box;
+    display :flex;
+    font-size: 24rpx;
+    padding:0 10rpx;
+    margin-right: 10rpx;
+    justify-content :center;
+    line-height :30rpx;
+}
+.list_main_content_content .xaiowei-movie-tags .week_hot{
+    border: 2rpx solid rgba(255, 67, 97, 0.4);
+    box-sizing :border-box;
+    display :flex;
+    font-size: 24rpx;
+    padding:0 10rpx;
+    margin-right: 10rpx;
+    justify-content :center;
+    line-height :30rpx;
+    color:rgb(255, 144, 28);
+}
+/* 右边按钮 */
+.list_main_content_btn{
+    width: 108rpx;
+    background-color: #fb5688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20rpx;
+    color: #fff;
+    font-size: 24rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+/* 即将上映 */
+.futrue_play{
+    background-color: #f5f6f8;
+}
+.wei_futrue{
+    margin: 20rpx 30rpx;
+}

@@ -1,0 +1,67 @@
+
+<view class="xiaowei_top_nav">
+    <view class="wei_left">
+        <view>
+            <text>武汉</text>
+            <text class="iconfont icon-sanjiaoxing_shang"></text>
+        </view>
+        <view>
+            <text>全城</text>    
+            <text class="iconfont icon-sanjiaoxing_shang"></text>
+        </view>
+        <view>
+            <text>筛选</text>
+            <text bindtap="paixu" class="iconfont icon-sanjiaoxing_shang"></text>
+            <text bindtap="paixu1" class="iconfont icon-sanjiaoxiangshangjiantou"></text>
+        </view>
+    </view>
+    <view class="wei_right">
+        <text class="iconfont icon-jinggao1"></text>
+        <text>综合排序</text>
+        <text class="iconfont icon-sanjiaoxing_shang"></text>
+        <text style="font-size: 28rpx;" class="iconfont icon-sousuo"></text>
+    </view>
+</view>
+<!-- 轮播图的部分-->
+
+<!-- 列表部分 -->
+<view  wx:for="{{moiveList}}" class="xiaowei_list">
+     <view class="xiaowei_1 xiaowei_1_public">
+         <view class="left">{{item.title}}</view>
+         <view class="right">
+            <!-- <text>新人 ${{item.price}}</text> -->
+            <text wx:if="{{paixusheng==[]}}">新人${{item.price}}</text>
+            <text wx:else="">新人 ${{paixusheng[index]}}</text>
+            <text>起</text>
+         </view> 
+     </view>
+     <view class="xiaowei_2 xiaowei_1_public">
+        <view>{{item.address}}</view>
+        <view>--{{item.distance}}km</view>
+     </view>   
+     <view class="xiaowei_3" style="display: flex;flex-wrap:wrap;">
+        <image src="/images/temporary/movie_1.png" ></image>
+
+
+        <text wx:if="{{item.a == 'true'?true:false}}" class="xiaowei_3_2">可改签</text>
+        <text wx:if="{{item.b == 'true'?true:false}}">杜比全景声厅</text>
+        <text wx:if="{{item.c == 'true'?true:false}}">巨幕厅</text>
+        <text wx:if="{{item.d == 'true'?true:false}}">IMAX厅</text>
+        <text wx:if="{{item.e == 'true'?true:false}}">观影小食</text>
+        <text wx:if="{{item.f == 'true'?true:false}}">杜比全景声厅</text>
+        <text wx:if="{{item.g == 'true'?true:false}}">3D眼镜收费</text>
+        <text wx:if="{{item.h == 'true'?true:false}}">可退票</text>
+<!-- 
+        <text wx:if="{{}}" class="xiaowei_3_2">可改签</text>
+        <text wx:if="{{(item.selectItem)/10%10==1?true:false}}" class="xiaowei_3_3">杜比全景声厅</text>
+        <text wx:if="{{(item.selectItem)/100%10==1?true:false}}" class="xiaowei_3_3">巨幕厅</text>
+        <text wx:if="{{(item.selectItem)/1000%10==1?true:false}}" class="xiaowei_3_3">IMAX厅</text>
+        <text wx:if="{{(item.selectItem)/10000%10==1?true:false}}" class="xiaowei_3_3">观影小食</text>
+        <text wx:if="{{(item.selectItem)/100000%10==1?true:false}}" class="xiaowei_3_3">杜比全景声厅</text>
+        <text wx:if="{{(item.selectItem)/1000000%10==1?true:false}}" class="xiaowei_3_3">3D眼镜收费</text>
+        <text wx:if="{{(item.selectItem)/10000000%10==1?true:false}}" class="xiaowei_3_3">可退票</text> -->
+     </view>
+</view>
+
+
+

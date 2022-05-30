@@ -1,0 +1,50 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/movie/moive",
+        "pages/find/find",
+        "pages/me/me",
+        "pages/movieDetail/movieDetail",
+        "pages/findDetail/findDetail",
+        "pages/index/index",
+        "pages/sendPinLun/sendPinLun",
+        "pages/test/test",
+        "pages/buy/buy",
+        "pages/test1/test1"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "小卫剧院",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [{
+          "pagePath": "pages/home/home",
+          "text": "首页",
+          "iconPath": "/images/bar/home-1.png",
+          "selectedIconPath": "/images/bar/home-0.png"
+        },{
+          "pagePath": "pages/movie/moive",
+          "text": "影院",
+          "iconPath": "/images/bar/cart-1.png",
+          "selectedIconPath": "/images/bar/cart-0.png"
+        },{
+          "pagePath": "pages/find/find",
+          "text": "发现",
+          "iconPath": "/images/bar/category-1.png",
+          "selectedIconPath": "/images/bar/category-0.png"
+        },{
+          "pagePath": "pages/me/me",
+          "text": "我的",
+          "iconPath": "/images/bar/me-1.png",
+          "selectedIconPath": "/images/bar/me-0.png"
+        }
+      ],
+       "selectdColor":"#ccc ",
+       "backgroundColor": "#fff",
+       "borderStyle": "black"
+      },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

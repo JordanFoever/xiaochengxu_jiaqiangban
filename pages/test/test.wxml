@@ -1,0 +1,9 @@
+<view>
+  <text class="conts {{isF?'hide':''}}">{{motto}}</text>
+  <text bindtap='aa'>{{isF ? '展开' : '收起'}}</text>
+</view>
+
+<!-- 进度条的测试 -->
+<view style="width: 20vw;" class="progress-box">
+  <progress percent="20"  stroke-width="3"/>
+</view>

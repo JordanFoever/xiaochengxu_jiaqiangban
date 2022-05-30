@@ -1,0 +1,174 @@
+<!-- 下拉菜单 -->
+<view id="swiper-tab">
+	<view class="swiper-tab">
+		<view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="tabNav">{{first}}
+			<i></i>
+		</view>
+		<view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="tabNav">{{second}}
+			<i></i>
+		</view>
+		<view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="tabNav">{{thirds}}
+			<i></i>
+		</view>
+		<view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="tabNav">{{fours}}
+			<i></i>
+		</view>
+	</view>
+	<swiper current="{{currentTab}}" duration="1000" class="swiper-item" style='display:{{displays}}'>
+		<swiper-item>
+			<view>
+				<view class='qiehuannier'>
+					<view class="nav bc_white">
+						<view class="{{selected?'red':'default'}}" bindtap="selected">10-20元</view>
+						<view class="{{selected1?'red':'default'}}" bindtap="selected1">20-30元</view>
+						<view class="{{selected2?'red':'default'}}" bindtap="selected2">30元以上
+					</view>
+					</view>
+					<view id="rights">
+						<view class="{{selected?'show':'hidden'}}">
+							<view class="{{_sum == 1?'add_adress':'add_city'}}" data-num="1" bindtap="clickSum" data-name="12">12</view>
+							<view class="{{_sum == 2?'add_adress':'add_city'}}" data-num="2" bindtap="clickSum" data-name="13">13</view>
+							<view class="{{_sum == 3?'add_adress':'add_city'}}" data-num="3" bindtap="clickSum" data-name="14">13</view>
+							<view class="{{_sum == 4?'add_adress':'add_city'}}" data-num="4" bindtap="clickSum" data-name="14">14</view>
+							<view class="{{_sum == 5?'add_adress':'add_city'}}" data-num="5" bindtap="clickSum" data-name="15">15</view>
+							<view class="{{_sum == 6?'add_adress':'add_city'}}" data-num="6" bindtap="clickSum" data-name="16">16</view>
+							<view class="{{_sum == 6?'add_adress':'add_city'}}" data-num="6" bindtap="clickSum" data-name="16">17</view>
+							<view class="{{_sum == 6?'add_adress':'add_city'}}" data-num="6" bindtap="clickSum" data-name="16">18</view>
+							<view class="{{_sum == 6?'add_adress':'add_city'}}" data-num="6" bindtap="clickSum" data-name="16">19</view>
+							<view class="{{_sum == 6?'add_adress':'add_city'}}" data-num="6" bindtap="clickSum" data-name="16">10</view>
+						</view>
+						<view class="{{selected1?'show':'hidden'}}">
+							<view class="{{_mum == 1?'add_adre':'add_city'}}" data-num="1" bindtap="clickMum" data-name="21">21</view>
+							<view class="{{_mum == 2?'add_adre':'add_city'}}" data-num="2" bindtap="clickMum" data-name="22">22</view>
+							<view class="{{_mum == 3?'add_adre':'add_city'}}" data-num="3" bindtap="clickMum" data-name="23">23</view>
+							<view class="{{_mum == 4?'add_adre':'add_city'}}" data-num="4" bindtap="clickMum" data-name="24">24</view>
+						</view>
+						<view class="{{selected2?'show':'hidden'}}">
+							<view class="{{_cum == 1?'add_ad':'add_city'}}" data-num="1" bindtap="clickCum" data-name="31">31</view>
+							<view class="{{_cum == 2?'add_ad':'add_city'}}" data-num="2" bindtap="clickCum" data-name="32">32</view>
+							<view class="{{_cum == 3?'add_ad':'add_city'}}" data-num="3" bindtap="clickCum" data-name="33">33</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view class="location_bottom" hidden="">
+				<view class="{{_num == 1?'add_citying':'add_city'}}" data-num="1" bindtap="clickNum" data-name="北京">武汉</view>
+				<view class="{{_num == 2?'add_citying':'add_city'}}" data-num="2" bindtap="clickNum" data-name="上海">上海</view>
+				<view class="{{_num == 3?'add_citying':'add_city'}}" data-num="3" bindtap="clickNum" data-name="上海">北京</view>
+				<view class="{{_num == 4?'add_citying':'add_city'}}" data-num="4" bindtap="clickNum" data-name="上海">深圳</view>
+				<view class="{{_num == 5?'add_citying':'add_city'}}" data-num="5" bindtap="clickNum" data-name="上海">成都</view>
+				<view class="{{_num == 6?'add_citying':'add_city'}}" data-num="6" bindtap="clickNum" data-name="上海">大冶</view>
+				<view class="{{_num == 7?'add_citying':'add_city'}}" data-num="7" bindtap="clickNum" data-name="上海">济南</view>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view class="location_bottom" hidden="">
+				<view class="{{_res == 1?'add_House':'add_city'}}" data-num="1" bindtap="clickHouse" data-name="1km以内">1km以内</view>
+				<view class="{{_res == 2?'add_House':'add_city'}}" data-num="2" bindtap="clickHouse" data-name="2km以内">2km以内</view>
+				<view class="{{_res == 3?'add_House':'add_city'}}" data-num="3" bindtap="clickHouse" data-name="3km以内">3km以内</view>
+				<view class="{{_res == 4?'add_House':'add_city'}}" data-num="4" bindtap="clickHouse" data-name="4km以内">4km以内</view>
+				<view class="{{_res == 5?'add_House':'add_city'}}" data-num="5" bindtap="clickHouse" data-name="5km以内">5km以内</view>
+				<view class="{{_res == 6?'add_House':'add_city'}}" data-num="6" bindtap="clickHouse" data-name="6km以内">6km以内</view>
+				<view class="{{_res == 7?'add_House':'add_city'}}" data-num="7" bindtap="clickHouse" data-name="6km以上">6km以上</view>
+			</view>
+		</swiper-item>
+		<swiper-item class="shaixuankuang">
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">价格</span>
+				<block wx:for="{{array}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="choseTxtColor" style="{{index == one?' border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">距离</span>
+				<block wx:for="{{chaoxiang}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="chaoxiang" style="{{index == two?'border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">优惠</span>
+				<block wx:for="{{louceng}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="louceng" style="{{index == third?'border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">地点</span>
+				<block wx:for="{{zhuangxiu}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="zhuangxiu" style="{{index == four?'border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">评价</span>
+				<block wx:for="{{leibei}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="leibei" style="{{index == five?'border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+			<view class="shaixuan">
+				<span class="shuaixuantiaojian">最新</span>
+				<block wx:for="{{tese}}" wx:key="key">
+					<view class="chose-txt" data-id="{{index}}" bindtap="tese" style="{{index == six?'border:1rpx solid #e8580c; color: #e8580c':'border:1rpx solid gainsboro;color:gray'}}">
+						<text class="chose-p">{{item.name}}</text>
+					</view>
+				</block>
+			</view>
+			<view class="qingkong">
+				<span class="tianjian" bindtap="qingchu">清除条件</span>
+				<p class="queren" bindtap="queren">确认</p>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="swiper-beijing" bindtap="hideNav" style='display:{{displays}}'></view>
+
+<!-- 列表部分 -->
+<view  wx:for="{{moiveList}}" class="xiaowei_list">
+     <view class="xiaowei_1 xiaowei_1_public">
+         <view class="left">{{item.title}}</view>
+         <view class="right">
+            <text>新人 ${{item.price}}</text>
+            <text>起</text>
+         </view> 
+     </view>
+     <view class="xiaowei_2 xiaowei_1_public">
+        <view>{{item.address}}</view>
+        <view>--{{item.distance}}km</view>
+     </view>   
+     <view class="xiaowei_3" style="display: flex;flex-wrap:wrap;">
+        <image src="/images/temporary/movie_1.png" ></image>
+
+
+        <text wx:if="{{item.a == 'true'?true:false}}" class="xiaowei_3_2">可改签</text>
+        <text wx:if="{{item.b == 'true'?true:false}}">杜比全景声厅</text>
+        <text wx:if="{{item.c == 'true'?true:false}}">巨幕厅</text>
+        <text wx:if="{{item.d == 'true'?true:false}}">IMAX厅</text>
+        <text wx:if="{{item.e == 'true'?true:false}}">观影小食</text>
+        <text wx:if="{{item.f == 'true'?true:false}}">杜比全景声厅</text>
+        <text wx:if="{{item.g == 'true'?true:false}}">3D眼镜收费</text>
+        <text wx:if="{{item.h == 'true'?true:false}}">可退票</text>
+<!-- 
+        <text wx:if="{{}}" class="xiaowei_3_2">可改签</text>
+        <text wx:if="{{(item.selectItem)/10%10==1?true:false}}" class="xiaowei_3_3">杜比全景声厅</text>
+        <text wx:if="{{(item.selectItem)/100%10==1?true:false}}" class="xiaowei_3_3">巨幕厅</text>
+        <text wx:if="{{(item.selectItem)/1000%10==1?true:false}}" class="xiaowei_3_3">IMAX厅</text>
+        <text wx:if="{{(item.selectItem)/10000%10==1?true:false}}" class="xiaowei_3_3">观影小食</text>
+        <text wx:if="{{(item.selectItem)/100000%10==1?true:false}}" class="xiaowei_3_3">杜比全景声厅</text>
+        <text wx:if="{{(item.selectItem)/1000000%10==1?true:false}}" class="xiaowei_3_3">3D眼镜收费</text>
+        <text wx:if="{{(item.selectItem)/10000000%10==1?true:false}}" class="xiaowei_3_3">可退票</text> -->
+     </view>
+</view>
+
+
+

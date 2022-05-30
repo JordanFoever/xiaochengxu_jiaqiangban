@@ -1,0 +1,9 @@
+<form bindsubmit="formSubmit">
+    <textarea  style="position: relative;"  maxlength="500"  bindinput="getInputComment"  class="input"  placeholder="请输入评论信息" auto-focus="true" name="textarea_content" id="" cols="30" rows="10">
+        <text style="position: absolute;top: 80%;right: 20rpx;">{{currentWord}}/{{maxWord}}(最多可输入500字)</text>
+    </textarea>
+
+    <button style="margin-top: 30rpx;" form-type="submit" bindtap="toDetail">发送</button>
+</form>
+
+

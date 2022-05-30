@@ -1,0 +1,120 @@
+page{
+    padding:40rpx;
+    background-color: #fff;
+    width: 90vw;
+    margin: 5rpx auto;    
+}
+.xiaowei_title{
+    font-size: 50rpx;
+    color: #1f1f1f;
+    font-weight: 700;
+}
+.xiaowei_autor{
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+}
+.xiaowei_autor .xiao_user-image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+}
+.xiaowei_name-and-time{
+    margin-left: 5vw;
+}
+.xiaowei_name-and-time .wei_name{
+    color:rgb(31, 31, 31);
+}
+
+.xiaowei_name-and-time .wei_time{
+     color:rgb(133, 133, 133);
+     font-size: 24rpx;
+     font-weight: 400;
+     margin-top: 10rpx;
+}
+
+.xiaowei_img image{
+    width: 100%;
+     margin-top: 100rpx; 
+     border-radius: 30rpx;  
+}
+.xiaowei_content{
+    margin:50rpx 0;
+    font-size: 38rpx;
+    color:rgb(31, 31, 31);
+    line-height: 64rpx;
+}
+
+/* 评论部分 */
+/* 评论的标题 */
+.comment_title{
+    font-weight: 700;
+    font-size: 80rpx;
+    margin-bottom: 30rpx;
+}
+
+.xiaowei_comment{
+    border-bottom:2rpx solid peru;
+    margin-bottom: 100rpx;
+}
+.xiaowei_comment .xiaowei_top{
+    display: flex;
+    align-items: center;
+}
+.xiaowei_comment .xiaowei_top image{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 100%;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+.xiaowei_comment .xiaowei_buttom{
+    padding-left:40rpx;
+    margin-bottom: 10rpx;
+}
+
+
+
+
+/* 底部固定的发送评论区 */
+.bottom-fix-wrap{
+    position: fixed!important;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: #fff; */
+    background-color: pink;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 2.4vw 3.2vw;
+}
+.bottom-fix-wrap .guide{
+    flex: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.bottom-fix-wrap .guide .title{
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e333e;
+}
+.bottom-fix-wrap .guide .sub_title{
+    font-size: 11px;
+    color: #959aa5;
+}
+.bottom-fix-wrap .buybt{
+    width: 26vw;
+    box-sizing: border-box;
+    height: 8vw!important;
+    z-index: 1;
+    position: relative;
+    background-color: rgb(228, 4, 4);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200rpx;
+    color: #fff;
+}

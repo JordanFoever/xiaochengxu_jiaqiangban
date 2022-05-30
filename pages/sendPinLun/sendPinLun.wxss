@@ -1,0 +1,16 @@
+page{
+    width: 90vw;
+    height: 100vh;
+    margin: 10rpx auto;
+    background-color: #e1dfdf;
+}
+.input{
+    border: 2rpx dashed royalblue;
+    padding: 30rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: salmon;
+    background-color: wheat;
+}
+
+

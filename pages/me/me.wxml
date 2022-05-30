@@ -1,0 +1,30 @@
+<view class="my">
+
+<!-- 顶部登录 -->
+<view class="login">
+    <image src="{{userInfo ? userInfo.avatarUrl : ''}}"></image>
+    <view class="user_name">
+        <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindtap="getUserInfo" style="width: 530rpx;padding: 0rpx;">点击登录</button>
+        <view wx:else>{{userInfo.nickName}}</view>
+    </view>
+</view>
+
+<!-- 活动模块 -->
+<view class="model">
+    <view class="model_list" wx:for="{{modelList}}" wx:key="index">
+        <image src="{{item.icon}}"></image>
+        <view>{{item.text}}</view>
+    </view>
+</view>
+
+<!-- 功能入口列表 -->
+<view class="fun">
+    <view class="funlist" wx:for="{{funList}}" wx:key="index">
+        <view class="item" wx:for="{{item}}" wx:key="index" wx:for-item="itema">
+            <view>{{itema}}</view>
+            <!-- <image src="../../icon/right.png"></image> -->
+            <text class="iconfont icon-right"></text>
+        </view>
+    </view>
+</view>
+</view>

@@ -1,0 +1,138 @@
+<!-- /顶部的导航栏  -->
+<!-- 顶部导航 -->
+
+<view class="nav">
+    <view class="city-c">
+        <view class="current-city">
+            <view class="i-logo"></view>
+            <view class="nav_left">武汉</view>
+            <!-- <view></view> -->
+            <text class="iconfont icon-right"></text>
+        </view>
+    </view>
+    <view class="nav_right">
+        <!-- <view class="bui-tabs-tab-line" style="width: 38rpx;color: rgb(70, 9, 9); transform: translate3d(32px, 0px, 0px); transition: transform 0.25s ease-in-out 0s;"></view> -->
+        <view class="nav_list {{select[index] ? 'select' : ''}}" wx:for="{{navList}}" wx:key="index" bindtap="navClick" data-index="{{index}}">{{item}}</view>
+    </view>
+</view>
+
+<!-- 正在热映 -->
+<view class="now_play" wx:if="{{select[0]}}">
+    <!-- 第一部分,轮播图 -->
+    <!-- 轮播图部分 -->
+
+    <swiper class="swiper_top" autoplay="{{true}}" indicator-dots>
+        <swiper-item>
+            <image mode="aspectFill" src="/images/swiper_1.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image mode="aspectFill" src="/images/swiper_2.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image mode="aspectFill" src="/images/swiper_3.jpg"></image>
+        </swiper-item>
+    </swiper>
+
+    <!-- 第二部分,列表(电影礼包，拼团领卷，巨星驾到，影城特惠) -->
+    <view class="list_select">
+        <view>
+            <image mode="aspectFill" src="/images/home/tt.jpg"></image>
+            <text>电影礼包</text>
+        </view>
+        <view>
+            <image mode="aspectFill" src="/images/home/a1.jpg"></image>
+            <text>拼团领卷</text>
+        </view>
+        <view>
+            <image mode="aspectFill" src="/images/home/a2.jpg"></image>
+            <text>巨星驾到</text>
+        </view>
+        <view>
+            <image mode="aspectFill" src="/images/home/bb.jpg"></image>
+            <text>影城特惠</text>
+        </view>
+    </view>
+    <!-- 第三部分 列表部分-->
+    <view class="list_main">
+
+        <view wx:for="{{homeList}}" class="list_main_content">
+            <!-- 左 -->
+            <view class="list_main_content_image">
+                <image class="bui_image" src="{{item.cover.url}}"></image>
+                <view></view>
+
+                <view class="bui_play">
+                    <!-- <text class="iconfont icon-right" style="color: #00a0dc;width: 1em;height: 1em;"></text> -->
+                    <text class="iconfont icon-sanjiao3"></text>
+                </view>
+            </view>
+            <!-- 中  -->
+            <view class="list_main_content_content" bindtap="toDetail" data-id="{{item.id}}">
+                <view class="movie-name-wrapper">
+                    <text class="movie-name">{{item.title}}</text>
+                </view>
+                <view class="xiaowei-movie-desc">
+                    <text wx:if="{{!item.rating.value}}" class="xiaowei-movie-desc-normal">淘票票评分:无</text>
+                    <text wx:else class="xiaowei-movie-desc-normal">淘票票评分</text>
+                    <text class="xiaowei-movie-desc-highlight">{{item.rating.value}}</text>
+                    <text class="xiaowei-movie-desc-splitline">|</text>
+                    <text wx:if="{{!item.rating.count}}" class="xiaowei-movie-desc-normal">暂无人评</text>
+                    <text wx:else class="xiaowei-movie-desc-normal">{{item.rating.count}} 人评</text>
+                </view>
+                <view class="xiaowei-public xiaowei-movie-director">导演:<text wx:for="{{item.directors}}">{{item}}</text></view>
+                <view class="xiaowei-public xiaowei-movie-role">主演: <text wx:for="{{item.actors}}">{{item}} </text></view>
+                <view class="xaiowei-movie-tags">
+                    <view  class="today_hot">今日最热</view>
+                    <view  wx:if="{{item.rating.value > 1}}" class="week_hot">一周最热</view>
+                </view>
+            </view>
+            <!-- 右 -->
+            <view class="list_main_content_btn">
+                <view bindtap="headleBuy">购票</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<!-- 即将上映 -->
+<view class="futrue_paly" wx:if="{{select[1]}}">
+    <view class="wei_futrue">
+        <view class="wei_top">
+            <view>明天</view>
+            <view style="font-size: 700;">05-20</view>
+        </view>
+        <view class="list_main">
+            <view wx:for="{{homeList}}" class="list_main_content">
+                <!-- 左 -->
+                <view class="list_main_content_image">
+                    <image class="bui_image" src="{{item.cover.url}}"></image>
+                    <view></view>
+
+                    <view class="bui_play">
+                        <!-- <text class="iconfont icon-right" style="color: #00a0dc;width: 1em;height: 1em;"></text> -->
+                        <text class="iconfont icon-sanjiao3"></text>
+                    </view>
+                </view>
+                <!-- 中  -->
+                <view class="list_main_content_content" >
+                    <view class="movie-name-wrapper">
+                        <text class="movie-name">{{item.title}}</text>
+                    </view>
+                    <view class="xiaowei-movie-desc">
+                        <text class="xiaowei-movie-desc-highlight">23.3万</text>
+                        <text  class="xiaowei-movie-desc-normal">想看</text>    
+                        <text class="xiaowei-movie-desc-splitline">|</text>
+                        <text  class="xiaowei-movie-desc-normal">本周五上映</text>
+                    </view>
+                    <view class="xiaowei-public xiaowei-movie-director">导演:<text wx:for="{{item.directors}}">{{item}}</text></view>
+                    <view class="xiaowei-public xiaowei-movie-role">主演: <text wx:for="{{item.actors}}">{{item}} </text></view>
+                </view>
+                <!-- 右 -->
+                <view   style="background-color: #2fb9fa;" class="list_main_content_btn">
+                    <view bindtap="headleYuShou">预售</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

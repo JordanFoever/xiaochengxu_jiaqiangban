@@ -1,0 +1,103 @@
+page{
+    width: 95vw;
+    height: 100vh;
+    margin:0rpx auto;
+    /* background-color: rosybrown; */
+    position: relative;
+    background-color: #f5f6f8;
+}
+ .xiaowei_top_nav{
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    align-items: center;
+    /* position: fixed; */
+    /* right: 2.5vw; */
+    /* position: relative; */
+    background-color: #fff;
+}
+.wei_left{
+    display: flex;
+}
+.wei_left view{
+    margin-right: 10rpx;
+}
+.wei_right text{
+    margin-left: 10rpx;
+}
+/* 列表部分 */
+.xiaowei_list{
+    color:rgb(46, 51, 62);
+    line-height:48rpx;
+    box-sizing:border-box;
+    border-radius: 15rpx;
+    padding: 22rpx 24rpx 24rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+.xiaowei_list .xiaowei_1_public{
+    display: flex;
+    justify-content: space-between;
+}
+.xiaowei_list .xiaowei_1{
+    color: rgb(46, 51, 62);
+    font-size: 32rpx;
+    font-weight: 500;
+}
+.xiaowei_list .left{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 60vw;
+}
+.xiaowei_list .right text:nth-child(1){
+    color: rgb(255, 67, 97);
+    font-size: 24rpx;
+    font-weight: 400;
+}
+
+.xiaowei_list .right text:nth-child(2){
+    color: rgb(149, 154, 165);
+    font-size: 24rpx;
+    font-weight: 400;
+}
+.xiaowei_list .xiaowei_2 view:nth-child(1){
+    color:rgb(95, 102, 114);
+    font-size: 24rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 70vw;
+}
+.xiaowei_list .xiaowei_2 view:nth-child(2){
+    font-size: 24rpx;
+}
+.xiaowei_3{
+    display: flex;
+    align-items: center;
+}
+.xiaowei_3 image{
+    width: 75rpx;
+    height: 30rpx;
+}
+.xiaowei_3 text{
+    font-size: 24rpx;
+    border: 2rpx solid rgba(49, 169, 245, 0.4);
+    border-radius: 6rpx;
+    background-color:rgba(0, 0, 0, 0);
+    align-items:center;
+    padding: 0 6rpx;
+    margin-left: 8rpx;
+}
+.xiaowei_list text{
+    margin-top: 10rpx;
+}
+.xiaowei_list image{
+    margin-top: 10rpx;
+}
+
+
+
+

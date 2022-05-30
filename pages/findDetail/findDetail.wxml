@@ -1,0 +1,60 @@
+<view class="xiaowei_title">{{comFindList.title}}</view>
+<view class="xiaowei_autor">
+    <image class="xiao_user-image"  src="{{comFindList.aimage}}" mode="aspectFill"></image>
+    <view class="xiaowei_name-and-time">
+        <view class="wei_name">{{comFindList.author}}</view>
+        <view class="wei_time">
+            <text style="margin-right: 20rpx;">{{comFindList.time}}</text>
+            <text>{{comFindList.address}}</text> 
+        </view>
+    </view>
+</view>
+<view class="xiaowei_img">
+    <image  mode="aspectFill" src="{{comFindList.timage}}"></image>
+</view>
+<view class="xiaowei_content">
+{{comFindList.content}}
+</view>
+
+<view class="comment_title">评论部分</view>
+<!-- 评论部分 -->
+<view wx:for="{{pinLunList}}" class="xiaowei_comment">
+  <!-- 上面 -->
+    <view class="xiaowei_top">
+        <image mode="aspectFill" src="{{item.image}}"></image>
+        <view>
+            <view style="font-weight: 700;">{{item.username}}</view>
+            <view style="margin-top: 20rpx;font-size: 24rpx;">{{item.time}}</view>
+        </view>
+    </view>
+    <!-- 下面 -->
+    <view class="xiaowei_buttom">
+       {{item.content}}
+    </view>
+</view>
+
+ <!-- 底部固定的发送消息区 -->
+ <view class="bottom-fix-wrap">
+    <view class="guide" bindtap="sendPinLun" data-index="{{comFindList.id}}">
+        <view  class="title" style="margin-right: 180rpx;">说点什么吧</view>
+        <view>
+            <text  class="iconfont icon-dianzan"></text>
+            <text style="margin-left: 5rpx;">1</text>
+        </view >
+        <view style="margin-left:20rpx;">
+            <text class="iconfont icon-pinglun"></text>
+            <text style="margin-left: 5rpx;">{{pinlunNum}}</text>
+        </view>
+    </view>
+    <view >
+        <view class="buybt">发送</view>
+    </view>
+
+</view>
+
+
+
+
+
+
+

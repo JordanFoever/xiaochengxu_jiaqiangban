@@ -1,0 +1,239 @@
+<!-- 顶部视频 -->
+<view class="prism-player">
+    <video enable-play-gesture="true" style="width:100%;height: 100%;" preload="preload" autoplay="autoplay" src="http://bizcommon.alicdn.com/KM596pxVraOsnEmgAP7/KIwe9bfkSlBaZqNrJPO__hd.mp4?t=212787fc16527078995108090e7eef&b=video&p=cloudvideo_http_2595785_0"></video>
+</view>
+
+<view class="xiaowei_show-info-d">
+    <view class="xiaowei_image">
+        <image mode="aspectFill" src="{{movieDataList.cover_url}}"></image>
+    </view>
+    <view class="xaiowei_content">
+        <view class="xiaowei_1">{{movieDataList.title}}</view>
+        <view class="xiao_hei"><text wx:for="{{movieDataList.directors}}">{{item.name}}</text></view>
+        <view class="xiao_hei"><text wx:for="{{movieDataList.durations}}">{{item}}</text> / 动画 / 喜剧 / 动作 / <text wx:for="{{movieDataList.countries}}">{{item}}</text></view>
+        <view class="xiao_hei"><text wx:for="{{movieDataList.pubdate}}">{{item}}</text></view>
+    </view>
+</view>
+
+<!-- 展示评分部分  -->
+<view class="show-remark">
+    <view class="remark-wrapper">
+        <view class="remark-head">
+            <view class="xiaowei_at_left">
+                <text style="margin-right: 20rpx;">淘票票评分</text>
+                <text class="iconfont icon-jinggao" style="font-size: 40rpx;width: 40rpx;height: 40rpx;"></text>
+            </view>
+            <text class="iconfont icon-right" style="width: 1em;height: 1em;"></text>
+        </view>
+        <view class="remark-body">
+            <view class="xiaowei_left">
+                <view class="xiaowei_1">{{movieDataList.rating.value}}</view>
+                <view class="xiaowei_2">
+                    <text wx:for="{{[1,2,3,4,5]}}" class="iconfont icon-wujiaoxing" style="width: 1em;height: 1em;color: #fe942a;"></text>
+                </view>
+                <view class="xiaowei_3">{{movieDataList.rating.count}}人评价</view>
+            </view>
+            <view class="xiaowei_center">
+                <view wx:for="{{5}}" class="line-score-item" style="display: flex;">
+                    <!-- <view> -->
+
+                    <text style="font-size: 10rpx;height: 10rpx;line-height: 20rpx;color: #fe942a;font-size: 24rpx;" wx:for="{{3}}" class="iconfont icon-wujiaoxing"></text>
+                    <text style="font-size: 10rpx;height: 10rpx;line-height: 20rpx;" wx:for="{{2}}" class="iconfont icon-wujiaoxing" style="color: black;font-size: 24rpx;"></text>
+
+                    <!-- </view> -->
+                    <!-- 进度条这个地方有问题 -->
+                    <view class="progress-box" style="display: flex;align-items: center;">
+                        <progress active="true" activeColor="#6f6f6f" backgroundColor="#c8c8c8" style="width:180rpx;" percent="80" stroke-width="3" />
+                    </view>
+                </view>
+            </view>
+            <view class="xiaowei_right">
+                <view class="wei_want_watch">
+                    <text class="xiaowei">3.1万</text><text class="laowei">人想看</text>
+                </view>
+                <view class="wei_watched">
+                    <text class="xiaowei">32.5万</text><text class="laowei">人看过</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="myMin"></view>
+<!-- <view style="width: 100%;height: 2000rpx; background-color: black;">
+</view> -->
+<!-- 简介,影评,更多-->
+<view class="jianjie_yinpin_gengduo">
+    <view bindtap="toJianJie" class="jianjie  {{select[0] ? 'select':''}}">简介</view>
+    <view bindtap="toYinPin" class="{{select[1] ? 'select':''}} yinpin">
+        影评
+        <text>999+</text>
+    </view>
+    <view bindtap="toGengDuo" class="{{select[2]?'select':''}} gengduo">更多</view>
+</view>
+<!-- 简介部分 -->
+<view class="jianjie_content" wx:if="{{select[0]}}">
+    <view style="margin-bottom: 30rpx;" class="wei_info">
+        <text class="conts {{isF?'hide':''}}"> {{movieDataList.intro}}</text>
+        <text style="color:#31a9f5;" bindtap='aa'>{{isF ? '展开' : '收起'}}</text>
+    </view>
+    <!-- 演职人员 -->
+    <view class="wei_author">
+        <view class="xiaowei_1">演职人员</view>
+        <view class="xiaowei_2">
+            <text>26</text>
+            <text class="iconfont icon-right"></text>
+        </view>
+    </view>
+    <!-- 演员列表 -->
+    <!-- 演员列表 -->
+    <scroll-view scroll-x="{{true}}" class="scroll_view">
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}">
+            <view class="actors">
+                <image class="author_image_1" mode="aspectFill" src="/images/temporary/author.jpg"></image>
+                <view>我是小卫哦</view>
+            </view>
+        </block>
+    </scroll-view>
+    <!-- 视频和剧照-->
+    <view class="wei_author">
+        <view class="xiaowei_1">视频和剧照</view>
+        <view class="xiaowei_2">
+            <text>26</text>
+            <text class="iconfont icon-right"></text>
+        </view>
+    </view>
+    <!-- 视频和剧照 -->
+    <scroll-view scroll-x="{{true}}" class="scroll_view">
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}">
+            <view class="actors">
+                <image class="author_image_2" mode="aspectFill" src="/images/temporary/jz.jpg"></image>
+                <image class="author_image_2" mode="aspectFill" src="/images/temporary/jz_1.jpg"></image>
+            </view>
+        </block>
+    </scroll-view>
+
+    <!-- 一张广告 -->
+    <view style="width: 100%;height: 21vw;">
+        <image style="width: 100%;height: 100%;" src="/images/temporary/jg.jpg" mode="aspectFill"></image>
+    </view>
+
+    <!-- 票房 -->
+    <view style="margin-top: 40rpx;font-weight: 700;">票房</view>
+    <view class="wei_piaoFang">
+        <view class="wei">
+            <view class="quan_1">3</view>
+            <view class="quan_2">今日票房排名</view>
+        </view>
+        <view class="wei">
+            <view class="quan_1">5,488</view>
+            <view class="quan_2">首周票房(万)</view>
+        </view>
+        <view class="wei">
+            <view class="quan_1">13,893</view>
+            <view class="quan_2">累计票房(万)</view>
+        </view>
+    </view>
+
+    <!-- 票房详情 -->
+    <view class="piaoFangDetail">票房详情</view>
+
+</view>
+
+<!-- 影评部分 -->
+<view class="yinpin_content" wx:if="{{select[1]}}">
+    <!-- 观众热评 -->
+    <view class="hot_comment">
+        <text style="font-weight: 700;margin-right: 10rpx;">观众热评</text>
+        <text class="iconfont icon-jinggao"></text>
+    </view>
+
+    <!-- 热评的每一项 -->
+    <view class="hot_item">
+        <view class="all">全部</view>
+        <view class="new">最新</view>
+        <!-- 这个地方到时候改进一下(太) -->
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">好评</text>
+            <text>{{commentDataList.length*3}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">差评</text>
+            <text>{{commentDataList.length*2}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">影评达人</text>
+            <text>{{commentDataList.length}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">有图</text>
+            <text>{{commentDataList.length*19}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">购票</text>
+            <text>{{commentDataList.length*4}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">蠢萌坏蛋圈粉</text>
+            <text>{{commentDataList.length*5}}</text>
+        </view>
+
+    </view>
+
+    <view style="margin-top:400rpx;margin-bottom: 200rpx;">
+        <!-- 评论部分 -->
+        <view wx:for="{{commentDataList}}" class="main_comment">
+            <view class="xiaowei_top">
+                <image mode="aspectFill" class="image" src="{{item.user.avatar}}"></image>
+                <view>
+                    <view>
+                        {{item.user.name}}
+                    </view>
+                    <view>
+
+                        <text style="margin-right: 10rpx;">购票</text>
+                        <text style="color: #fe942a;" wx:for="{{item.rating.value}}" class="iconfont icon-wujiaoxing-"></text>
+                        <text wx:for="{{item.rating.max-item.rating.value}}" class="iconfont icon-wujiaoxing-"></text>
+                        <text style="margin-left: 10rpx;">{{item.rating.value*2}}.0</text>
+                    </view>
+
+                </view>
+            </view>
+            <view style="margin-top: 20rpx;" class="xiaowei_center">
+                {{item.comment}}
+            </view>
+            <view style="margin-top: 20rpx;" class="xiaowei_bottom">
+                <view>
+                    {{item.create_time}}
+                </view>
+                <view>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>{{item.vote_count}}</text>
+                    <text class="iconfont icon-dianzan"></text>
+                    <text>{{item.vote_count*3}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>
+<!-- 更多部分 -->
+<view class="gengduo_conten" wx:if="{{select[2]}}">
+    <view style="display: flex;flex-direction: column;justify-content: center;">
+        <view style="font-weight: 700;color: #fe942a;margin-top: 30rpx;text-align: center;">更多的内容关注二维码</view>
+        <image style="margin:200rpx auto;" src="/images/temporary/tpp.jpg" mode="aspectFill"> </image>
+    </view>
+</view>
+
+
+<!-- 去顶部 -->
+<image src="/images/temporary/top.png" class="go_top" hidden="{{!go_top_show}}" bindtap="goTop"></image>
+
+<!-- 底部固定的购买栏 -->
+<view class="bottom-fix-wrap">
+    <view class="guide">
+        <view class="title">周票房榜No.1</view>
+        <view class="sub_title">总票房破1.3亿</view>
+    </view>
+    <view class="buybt">立即购买</view>
+</view>
